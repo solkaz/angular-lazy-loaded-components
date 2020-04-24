@@ -1,0 +1,26 @@
+<div>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <label for="street">Street</label>
+      <input type="text" formControlName="street" />
+    </fieldset>
+    <fieldset>
+      <label for="houseNumber">House Number</label>
+      <input type="text" formControlName="houseNumber" />
+    </fieldset>
+    <fieldset>
+      <label for="careOf">c/o</label>
+      <input type="text" formControlName="careOf" />
+    </fieldset>
+    <fieldset>
+      <label for="postalCode">Postal Code</label>
+      <input type="text" formControlName="postalCode" />
+    </fieldset>
+    <fieldset>
+      <label for="city">City</label>
+      <input type="text" formControlName="city" />
+    </fieldset>
+    <button type="submit" [disabled]="formGroup.invalid">Submit</button>
+    <button type="button" (click)="clearData.emit()">Clear</button>
+  </form>
+</div>
