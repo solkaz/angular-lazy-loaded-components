@@ -56,6 +56,9 @@ export class AppComponent {
 
   async loadMyForm() {
     if (!this.myFormRef) {
+      // Ideally, we'd not need to do all of this; declaring an NgModule
+      // for a component should be all we need, but there's an issue with the compiler.
+      // https://github.com/angular/angular/issues/35759#issuecomment-601444856
       import('./my-form/my-form.component').then((c) => {
         const ngModuleFactory = this.compiler.compileModuleSync(
           c.ReactiveFormsModule
